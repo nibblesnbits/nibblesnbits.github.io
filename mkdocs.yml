@@ -1,0 +1,23 @@
+site_name: Stephen Collins - Web Developer
+
+nav:
+  - "Hi, there.": "index.md"
+  - "Bio": "bio.md"
+  - "Links": "links.md"
+  - "Media": "media.md"
+
+theme:
+  icon:
+    logo: material/code-braces
+  name: material
+  favicon: img/favicon.ico
+  custom_dir: overrides
+
+extra_css:
+  - stylesheets/dark_theme.css
+  - stylesheets/codehilite.css
+  - stylesheets/theme-mod.css
+
+markdown_extensions:
+  - attr_list
+  - admonition
