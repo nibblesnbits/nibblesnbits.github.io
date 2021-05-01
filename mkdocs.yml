@@ -4,7 +4,6 @@ nav:
   - "Hi, there.": "index.md"
   - "Bio": "bio.md"
   - "Links": "links.md"
-  - "Media": "media.md"
 
 theme:
   icon:

@@ -9,3 +9,7 @@ I'm not a cog that churns out code without regard for anything but “getting th
 My resume can be found [here](https://1drv.ms/w/s!ArxTyUlsh6vMgbxFzD6wgC6J04BLjw?e=2hj5Ck){: target=_blank }.
 
 You can contact me via email at [sgcollins@outlook.com](mailto:sg.collins@outlook.com).
+
+If you want a real look into how I view software, check out my appearance on the Silicon Alley Podcast:
+
+<iframe src="https://anchor.fm/silicon-alley/embed/episodes/The-Human-Side-of-Software--Stephen-Collins--Founder-of-Double-Precision-Software-enmbh3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
