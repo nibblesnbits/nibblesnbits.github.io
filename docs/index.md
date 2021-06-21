@@ -6,9 +6,9 @@ After spending the last 10 years in various development roles, I can confidently
 
 I'm not a cog that churns out code without regard for anything but “getting the job done.” I'm a craftsman who carefully and meticulously devises the best possible solution to every problem presented, with the help of other experts.
 
-My resume can be found [here](https://1drv.ms/w/s!ArxTyUlsh6vMgbxFzD6wgC6J04BLjw?e=2hj5Ck){: target=_blank }.
+My resume can be found [here](./resume.pdf){: target=_blank }.
 
-You can contact me via email at [sgcollins@outlook.com](mailto:sg.collins@outlook.com).
+You can contact me via email at [stephen@nibblesnbits.net](mailto:stephen@nibblesnbits.net).
 
 If you want a real look into how I view software, check out my appearance on the Silicon Alley Podcast:
 
