@@ -13,3 +13,5 @@ You can contact me via email at [stephen@nibblesnbits.net](mailto:stephen@nibble
 If you want a real look into how I view software, check out my appearance on the Silicon Alley Podcast:
 
 <iframe src="https://anchor.fm/silicon-alley/embed/episodes/The-Human-Side-of-Software--Stephen-Collins--Founder-of-Double-Precision-Software-enmbh3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+
+I also [do some writing](https://nibblesnbits.medium.com) when the mood strikes.
