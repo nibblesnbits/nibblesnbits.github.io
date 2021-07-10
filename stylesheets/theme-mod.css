@@ -1,16 +1,13 @@
 .md-content {
-  margin-left: 0;
-}
-.md-sidebar--primary {
-  display: none;
+    margin-left: 0;
 }
 
 .headshot {
-  margin-right: 2ch;
-  margin-bottom: 8px;
-  width: 175px;
+    margin-right: 2ch;
+    margin-bottom: 8px;
+    width: 175px;
 }
 
 .md-icon--menu {
-  display: none;
+    display: none;
 }
