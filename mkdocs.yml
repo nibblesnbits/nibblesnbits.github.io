@@ -1,4 +1,6 @@
 site_name: Stephen Collins - Web Developer
+site_url: https://nibblesnbits.net/
+repo_url: https://github.com/nibblesnbits/nibblesnbits.github.io
 
 nav:
   - "Hi, there.": "index.md"
@@ -6,6 +8,8 @@ nav:
   - "Links": "links.md"
 
 theme:
+  features:
+    - navigation.tabs
   icon:
     logo: material/code-braces
   name: material
