@@ -10,7 +10,10 @@ A backend-agnostic message queueing library for .NET
 
 Pivot Tables for jQuery
 
-
 ## [jtontl](http://doubleprecisionsoftware.github.io/jsontl/)
 
 An XSLT-alike for JSON
+
+## [Slingshot Sagas](https://github.com/nibblesnbits/slingshot-sagas)
+
+A (very) old, but extensive starter kit for combining React, Redux, and [Redux Saga](https://redux-saga.js.org/).
