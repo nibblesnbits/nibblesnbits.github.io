@@ -1,3 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+
 # Links
 
 The projects I'm most proud of are all on GitHub.

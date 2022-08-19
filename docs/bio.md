@@ -1,3 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+
 # About Me
 
 I'm a life-long geek who's passionate about software quality.  The bulk of my experience is in back-end technologies, though I've done some front-end work as well, my favorite so far being a combination of React and Relay.

@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 ![Stephen Collins](img/headshot.png){: align=left class=headshot }
 
 My name is Stephen Collins, and I am a Software Developer.  Not just a programmer, not just a coder.  I have spent the last 25+ years of my life focused on honing my skills in creating high quality software.  I craft products that I can be proud of.

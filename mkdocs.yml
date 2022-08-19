@@ -10,6 +10,8 @@ nav:
 theme:
   features:
     - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
   icon:
     logo: material/code-braces
   name: material
