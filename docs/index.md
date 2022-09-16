@@ -12,6 +12,8 @@ After spending the last 10 years in various development roles, I can confidently
 
 I'm not a cog that churns out code without regard for anything but “getting the job done.” I'm a craftsman who carefully and meticulously devises the best possible solution to every problem presented, with the help of other experts.
 
+I currently serve as the Technical Lead at [Ostrich](https://getostrich.com).
+
 My resume can be found [here](./resume.pdf){: target=_blank }.
 
 You can contact me via email at [stephen@nibblesnbits.net](mailto:stephen@nibblesnbits.net).
