@@ -17,11 +17,10 @@ After spending the last 10 years in various development roles, I can confidently
 
 I'm not a cog that churns out code without regard for anything but “getting the job done.” I'm a craftsman who carefully and meticulously devises the best possible solution to every problem presented, with the help of other experts.
 
-
-You can contact me via email at [stephen@nibblesnbits.net](mailto:stephen@nibblesnbits.net).
+You can contact me via email at [sgcollins@outlook.com](mailto:sgcollins@outlook.com).
 
 If you want a real look into how I view software, check out my appearance on the Silicon Alley Podcast:
 
 <iframe src="https://anchor.fm/silicon-alley/embed/episodes/The-Human-Side-of-Software--Stephen-Collins--Founder-of-Double-Precision-Software-enmbh3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
 
-I also [do some writing](https://nibblesnbits.medium.com){: target=_blank } when the mood strikes.
+I also do some [writing](https://nibblesnbits.medium.com){: target=_blank } and [blogging](https://blog.theunad.com/){: target=_blank } when the mood strikes.
