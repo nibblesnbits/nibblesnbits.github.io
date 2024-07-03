@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://nibblesnbits.net/</loc>
+         <loc>https://nibblesnbits.github.io/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://nibblesnbits.net/bio/</loc>
+         <loc>https://nibblesnbits.github.io/bio/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://nibblesnbits.net/links/</loc>
+         <loc>https://nibblesnbits.github.io/links/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
