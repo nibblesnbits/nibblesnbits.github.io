@@ -7,7 +7,7 @@ hide:
 ![Stephen Collins](img/headshot.png){: align=left class=headshot }
 
 !!! success inline end "I'm Looking for work!"
-    My resume can be found [here](/resume.pdf){: target=_blank }, and my portfolio [here](https://nibblesnbits.github.io/).
+    My resume can be found [here](/static/resume.pdf){: target=_blank }.
 
 My name is Stephen Collins, and I am a Software Developer, currently serving as the Technical Lead at [Ostrich](https://getostrich.com){: target=_blank } and [TMS Titanium](https://tmstitanium.com/)
 
