@@ -8,6 +8,7 @@ nav:
   - "Hi, there.": "index.md"
   - "Bio": "bio.md"
   - "Links": "links.md"
+  - Writing: writing/index.md
 
 theme:
   features:
