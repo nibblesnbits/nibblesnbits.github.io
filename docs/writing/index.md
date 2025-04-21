@@ -30,9 +30,6 @@ In addition to crafting software, I enjoy writing about the technologies, tools,
 - **[Chats with GPT](https://nibblesnbits.github.io/chats-with-gpt/)**  
    Late-night musings and conversations about technology and creativity.
 
-- **[The UnAd DevLog](https://blog.theunad.com/)**  
-   A detailed look at the development journey of UnAd.
-
 ---
 
 ### Let's Collaborate!

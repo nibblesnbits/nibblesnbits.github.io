@@ -23,4 +23,4 @@ If you're looking for someone who sees software as more than syntax, feel free t
 You can also get a better sense of how I approach my work from my appearance on the Silicon Alley Podcast:
 <iframe src="https://anchor.fm/silicon-alley/embed/episodes/The-Human-Side-of-Software--Stephen-Collins--Founder-of-Double-Precision-Software-enmbh3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
 
-When inspiration strikes, I also write [essays](https://nibblesnbits.medium.com){: target=_blank } and [blog posts](https://blog.theunad.com/){: target=_blank }.
+When inspiration strikes, I also write [essays](https://nibblesnbits.medium.com){: target=_blank } and [fiction](https://nibblesnbits.github.io/my-portfolio/){: target=_blank }.
