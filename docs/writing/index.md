@@ -21,6 +21,9 @@ In addition to crafting software, I enjoy writing about the technologies, tools,
 ---
 
 ## Blogs
+- **[My Writing Portfolio](https://nibblesnbits.github.io/my-portfolio/)**  
+   My portfolio under the pen name <em>Juno Threadborne</em>
+
 - **[My Medium](https://nibblesnbits.medium.com/)**  
    My main hub for articles on software, AI, and personal reflections.
 
