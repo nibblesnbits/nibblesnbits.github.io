@@ -12,9 +12,13 @@ Most recently, I served as Technical Lead at [Ostrich](https://getostrich.com), 
 
 ## My Philosophy
 
-I'm not here to “just ship it.” I write code like I’m going to read it five years from now—while juggling a production fire and a coffee spill. I believe in thoughtful abstractions, clean interfaces, and the kind of documentation that makes future-you want to buy past-you a beer.
+I'm not here to “just ship it.” I write code like I’m going to read it five years from now—while juggling a production fire and a coffee spill. I believe in thoughtful abstractions, clean interfaces, and the kind of documentation that makes future-you want to buy past-you a beer. 
 
-Whether I’m leading teams or building solo, my approach is pragmatic, precise, and always people-centered. Software is for humans. So is the code behind it.
+Whether I’m leading teams or building solo, my approach is pragmatic, precise, and always people-centered. Software is for humans. So is the code behind it. I thrive in teams that value clarity, trust, and a healthy dose of curiosity.
+
+In recent years, I’ve become especially interested in how human-centered design and ethical AI can reshape not just what we build, but why we build it.
+
+> When I’m not architecting systems, you’ll probably find me [writing essays](http://thrd.me/read) on ethical AI or playing with narrative experiments.
 
 ## Technical Expertise
 
