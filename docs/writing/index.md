@@ -33,4 +33,4 @@ In addition to crafting software, I enjoy writing about the technologies, tools,
 ---
 
 ### Let's Collaborate!
-If you’re looking for technical content—tutorials, blog posts, or developer documentation—I’d love to collaborate! Feel free to reach out at [sgcollins@outlook.com], and let’s create something impactful together.
+If you’re looking for technical content—tutorials, blog posts, or developer documentation—I’d love to collaborate! Feel free to reach out at [sgcollins@outlook.com](mailto:sgcollins@outlook.com), and let’s create something impactful together.
