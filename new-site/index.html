@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stephen Collins — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --font-sans: "Geist", -apple-system, "Helvetica Neue", sans-serif;
+
+    /* dark (default) */
+    --bg: #0e1013;
+    --bg-soft: #15181d;
+    --bg-elev: #1a1e24;
+    --ink: #e9e6dc;
+    --ink-2: #c9c5b8;
+    --ink-dim: #8c8778;
+    --ink-faint: #5a5648;
+    --rule: #232730;
+    --rule-soft: #1a1e24;
+    --accent: #ffb454;
+    --accent-soft: #4a371a;
+    --ok: #7ee0a8;
+    --selection: #3a3520;
+  }
+  html[data-theme="light"] {
+    --bg: #faf8f3;
+    --bg-soft: #f2efe6;
+    --bg-elev: #ffffff;
+    --ink: #16181b;
+    --ink-2: #393b3f;
+    --ink-dim: #6a6b6e;
+    --ink-faint: #a3a097;
+    --rule: #e2ddce;
+    --rule-soft: #ece8db;
+    --accent: #b85b14;
+    --accent-soft: #fbe9d4;
+    --ok: #2f8c3a;
+    --selection: #f0e2c1;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--selection); }
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color .15s, color .15s; }
+  a:hover { color: var(--accent); border-color: var(--accent); }
+  .mono { font-family: var(--font-mono); }
+
+  /* ============================ Layout */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ============================ Masthead */
+  .masthead {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+    position: sticky;
+    top: 0;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+  .masthead .brand {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    border: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .masthead .brand .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 20%, transparent);
+  }
+  .masthead nav {
+    display: flex; gap: 22px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .masthead nav a {
+    color: var(--ink-dim);
+    border: none;
+  }
+  .masthead nav a:hover { color: var(--ink); }
+  .masthead .right {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .theme-toggle {
+    background: none; border: 1px solid var(--rule); color: var(--ink-dim);
+    font-family: var(--font-mono); font-size: 11px; padding: 5px 10px;
+    cursor: pointer; letter-spacing: 0.05em; text-transform: uppercase;
+    border-radius: 999px;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--ink-dim); }
+
+  @media (max-width: 600px) {
+    .masthead nav { display: none; }
+  }
+
+  /* ============================ Hero */
+  .hero {
+    padding-bottom: 24px;
+  }
+  .hero .kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .hero .kicker::before {
+    content: "//"; color: var(--accent); margin-right: 2px;
+  }
+  .hero h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(34px, 5.5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .dim { color: var(--ink-faint); display: block; }
+
+  .hero .lede {
+    margin-top: 26px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 56ch;
+  }
+  .hero .lede a { font-weight: 500; }
+
+  .hero-meta {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 18px 24px;
+    margin-top: 32px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .hero-meta .item { display: flex; align-items: center; gap: 8px; color: var(--ink-2); }
+  .hero-meta .item .label { color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; }
+  .hero-meta .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 0 var(--ok);
+    animation: pulse 2.6s infinite;
+    display: inline-block;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 50%, transparent); }
+    70% { box-shadow: 0 0 0 8px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+
+  .hero-headshot {
+    margin-top: 36px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  image-slot.portrait {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    flex: 0 0 64px;
+  }
+  .hero-headshot .who {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+  .hero-headshot .who b { color: var(--ink); font-weight: 600; }
+
+  /* ============================ Section */
+  section {
+    padding: 72px 0 8px 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  section:first-of-type { border-top: none; margin-top: 0; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 28px;
+  }
+  .section-head .num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 7px;
+  }
+  .section-head h2 {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ink);
+  }
+  .section-head h2 .accent { color: var(--accent); }
+  .section-body {
+    margin-left: 122px;
+  }
+  @media (max-width: 600px) {
+    .section-head { grid-template-columns: 1fr; gap: 8px; }
+    .section-body { margin-left: 0; }
+  }
+
+  .prose p { margin: 0 0 16px 0; max-width: 60ch; color: var(--ink-2); }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+  .prose em { color: var(--ink); font-style: italic; }
+  .prose .accent { color: var(--accent); }
+
+  .pull {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    font-family: var(--font-mono);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 18px 0;
+    max-width: 56ch;
+    font-style: normal;
+  }
+
+  /* ============================ Stack */
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; max-width: 100%; }
+  .chip {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    padding: 5px 11px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    border-radius: 999px;
+  }
+  .chip .yrs { color: var(--ink-faint); font-size: 11px; }
+  .chip.core { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+  .chip.core .yrs { color: var(--accent); opacity: 0.8; }
+  .stack-note {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    max-width: 60ch;
+  }
+  .stack-note::before { content: "// "; color: var(--accent); }
+  .stack-now {
+    margin-top: 14px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ok);
+  }
+  .stack-now .arrow { color: var(--ink-faint); }
+
+  /* ============================ Featured project */
+  .featured {
+    border: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+    border-radius: 12px;
+    padding: 22px 24px 24px 24px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; height: 2px; width: 88px;
+    background: var(--accent);
+  }
+  .featured .ribbon {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .featured .ribbon::before {
+    content: "★"; font-size: 12px; color: var(--accent);
+  }
+  .featured h3 {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    margin: 0 0 4px 0;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .featured h3 .dim { color: var(--ink-faint); font-weight: 500; }
+  .featured .tagline {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.45;
+    margin: 6px 0 18px 0;
+    max-width: 56ch;
+  }
+  .featured .stack-row {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 16px;
+  }
+  .featured .stack-row .chip {
+    padding: 3px 9px;
+    font-size: 11px;
+    background: transparent;
+    color: var(--ink-dim);
+  }
+  .featured .arch {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin: 18px 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+    padding: 14px 0;
+  }
+  .featured .arch .node {
+    padding: 6px 4px;
+    text-align: center;
+    border: 1px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink-2);
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .featured .arch .arrow {
+    text-align: center;
+    color: var(--ink-faint);
+    padding: 6px 0;
+    align-self: center;
+  }
+  @media (max-width: 600px) {
+    .featured .arch { grid-template-columns: 1fr; gap: 4px; }
+    .featured .arch .arrow { transform: rotate(90deg); padding: 2px 0; }
+  }
+  .featured .links {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  /* ============================ Projects */
+  .projects-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 24px 0 10px 0;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 24px;
+    padding: 22px 4px;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .project .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+  .project h3 {
+    font-family: var(--font-mono);
+    font-size: 19px;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .project .desc {
+    margin-top: 4px;
+    color: var(--ink-2);
+    font-size: 15px;
+    max-width: 56ch;
+  }
+  .project .go {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-dim);
+    border: none;
+    white-space: nowrap;
+  }
+  .project .go::after { content: " ↗"; color: var(--ink-faint); }
+  .project:hover .go { color: var(--accent); }
+  .project:hover .go::after { color: var(--accent); }
+  .project.placeholder { opacity: 0.55; }
+  .project.placeholder h3 { font-weight: 500; }
+  .project.placeholder .desc { color: var(--ink-faint); }
+  @media (max-width: 600px) {
+    .project { grid-template-columns: 1fr; gap: 6px; }
+    .project .meta { padding-top: 0; }
+    .project .go { margin-top: 4px; }
+  }
+
+  /* ============================ Clients */
+  .clients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) { .clients { grid-template-columns: 1fr; } }
+  .client {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 14px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    border-radius: 8px;
+  }
+  .client .logo {
+    width: 64px; height: 44px;
+    background: var(--bg);
+    border: 1px solid var(--rule-soft);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .logo.craimark { font-style: italic; font-size: 18px; }
+  .logo.craimark::before { content: "Cr."; }
+  .logo.gomigo {
+    background: linear-gradient(135deg, var(--bg) 0 50%, var(--bg-soft) 50% 100%);
+    font-size: 16px;
+  }
+  .logo.gomigo::before { content: "go"; color: var(--accent); }
+  .logo.gomigo::after { content: "."; color: var(--ok); }
+  .logo.ostrich { border-radius: 22px / 12px; font-size: 9px; letter-spacing: 0.16em; }
+  .logo.ostrich::before { content: "OSTRICH"; }
+  .logo.ecp { background: var(--ink); color: var(--bg); font-size: 13px; letter-spacing: 0.18em; }
+  .logo.ecp::before { content: "ECP"; }
+
+  .client .role {
+    font-family: var(--font-mono);
+    color: var(--ink-faint);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .client h4 {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    margin: 2px 0 0 0;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .client .desc {
+    font-size: 13px;
+    color: var(--ink-dim);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+  .client .desc a { color: var(--ink-2); border-bottom-color: var(--rule); }
+
+  /* ============================ Podcast / Writing */
+  .podcast {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    border-radius: 10px;
+  }
+  .podcast .label {
+    font-family: var(--font-mono);
+    color: var(--ink-faint);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .podcast .ttl {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 4px 0 2px 0;
+  }
+  .podcast .sub {
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--ink-dim);
+    color: var(--ink);
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.primary { background: var(--accent); color: #1a1a1a; border-color: var(--accent); }
+  .btn.primary:hover { filter: brightness(1.06); }
+  html[data-theme="light"] .btn.primary { color: #fff; }
+
+  /* ============================ Contact */
+  .contact {
+    padding: 28px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    border-radius: 12px;
+  }
+  .contact h3 {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .contact p {
+    color: var(--ink-2);
+    margin: 0 0 18px 0;
+    max-width: 56ch;
+  }
+  .contact .row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* ============================ Footer */
+  footer {
+    margin-top: 72px;
+    padding: 28px 0 60px 0;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer a { color: var(--ink-dim); border: none; }
+  footer a:hover { color: var(--ink); }
+  footer .right { display: flex; gap: 18px; }
+
+  /* Subtle code-style accent for h2 prefix */
+  h2 .h-prefix { color: var(--accent); margin-right: 6px; opacity: 0.7; }
+</style>
+</head>
+<body>
+<script src="image-slot.js"></script>
+<script src="content.js"></script>
+
+<div class="page">
+
+  <!-- ============== MASTHEAD ============== -->
+  <header class="masthead">
+    <a href="#top" class="brand"><span class="dot"></span><span data-bind="brand"></span></a>
+    <nav id="nav"></nav>
+    <div class="right">
+      <button class="theme-toggle" id="theme-toggle">◐ Theme</button>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" id="top" style="border-top:none; padding-top:0; margin-top:0;">
+    <div class="kicker" data-bind="hero.kicker"></div>
+    <h1 data-bind-html="hero.headline_html"></h1>
+    <p class="lede" data-bind-html="hero.lede_html"></p>
+
+    <div class="hero-meta" id="hero-meta"></div>
+
+    <div class="hero-headshot">
+      <image-slot id="headshot" class="portrait" shape="circle" placeholder="Photo"></image-slot>
+      <div class="who">
+        <b data-bind="hero.name"></b><br/>
+        <a id="hero-email"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ABOUT ============== -->
+  <section id="about">
+    <div class="section-head">
+      <div class="num" data-bind="about.eyebrow"></div>
+      <h2 data-bind-html="about.headline_html"></h2>
+    </div>
+    <div class="section-body prose" id="about-body"></div>
+  </section>
+
+  <!-- ============== STACK ============== -->
+  <section id="stack">
+    <div class="section-head">
+      <div class="num" data-bind="stack.eyebrow"></div>
+      <h2 data-bind="stack.headline"></h2>
+    </div>
+    <div class="section-body">
+      <div class="chips" id="stack-chips"></div>
+      <p class="stack-note" data-bind="stack.note"></p>
+      <div class="stack-now" id="stack-now"></div>
+    </div>
+  </section>
+
+  <!-- ============== PROJECTS ============== -->
+  <section id="projects">
+    <div class="section-head">
+      <div class="num" data-bind="projects.eyebrow"></div>
+      <h2 data-bind-html="projects.headline_html"></h2>
+    </div>
+    <div class="section-body">
+      <div id="projects-featured"></div>
+      <div class="projects-label" data-bind="projects.openSourceLabel"></div>
+      <div class="projects" id="projects-list"></div>
+    </div>
+  </section>
+
+  <!-- ============== CLIENTS ============== -->
+  <section id="clients">
+    <div class="section-head">
+      <div class="num" data-bind="clients.eyebrow"></div>
+      <h2 data-bind-html="clients.headline_html"></h2>
+    </div>
+    <div class="section-body">
+      <div class="clients" id="clients-list"></div>
+    </div>
+  </section>
+
+  <!-- ============== WRITING ============== -->
+  <section id="writing">
+    <div class="section-head">
+      <div class="num" data-bind="writing.eyebrow"></div>
+      <h2 data-bind-html="writing.headline_html"></h2>
+    </div>
+    <div class="section-body">
+      <p class="prose" data-bind-html="writing.body_html"></p>
+
+      <div class="podcast" style="margin-top: 18px">
+        <div>
+          <div class="label" data-bind="writing.podcast.label"></div>
+          <div class="ttl" data-bind="writing.podcast.title"></div>
+          <div class="sub" data-bind="writing.podcast.sub"></div>
+        </div>
+        <a class="btn" id="podcast-btn" target="_blank" rel="noopener" data-bind="writing.podcast.buttonLabel"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section id="contact">
+    <div class="section-head">
+      <div class="num" data-bind="contact.eyebrow"></div>
+      <h2 data-bind-html="contact.headline_html"></h2>
+    </div>
+    <div class="section-body">
+      <div class="contact">
+        <h3 data-bind="contact.title"></h3>
+        <p data-bind="contact.body"></p>
+        <div class="row" id="contact-actions"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div data-bind="footer.copyright"></div>
+    <div class="right" id="footer-links"></div>
+  </footer>
+
+</div>
+
+<script>
+  // ============== RENDER from window.PORTFOLIO ==============
+  (function render() {
+    const C = window.PORTFOLIO;
+    if (!C) { console.error('content.js missing'); return; }
+
+    document.title = C.title;
+
+    // Helper: resolve "a.b.c" against object
+    const get = (path, obj=C) => path.split('.').reduce((o,k) => o && o[k], obj);
+
+    // Bind simple text & html
+    document.querySelectorAll('[data-bind]').forEach(el => {
+      const v = get(el.dataset.bind);
+      if (v != null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-bind-html]').forEach(el => {
+      const v = get(el.dataset.bindHtml);
+      if (v != null) el.innerHTML = v;
+    });
+
+    // ---- nav
+    document.getElementById('nav').innerHTML = C.nav
+      .map(n => `<a href="${n.href}">${n.label}</a>`).join('');
+
+    // ---- hero meta
+    document.getElementById('hero-meta').innerHTML = C.hero.meta.map(m => `
+      <div class="item">
+        ${m.pulse ? '<span class="pulse"></span>' : ''}
+        <span><span class="label">${m.label}</span>&nbsp;${m.value}</span>
+      </div>`).join('');
+
+    // ---- hero email
+    const heroEmail = document.getElementById('hero-email');
+    heroEmail.href = 'mailto:' + C.hero.email;
+    heroEmail.textContent = C.hero.email;
+
+    // ---- about body (paragraphs + pull + closing)
+    document.getElementById('about-body').innerHTML = [
+      ...C.about.paragraphs_html.map(p => `<p>${p}</p>`),
+      `<div class="pull">${C.about.pull_html}</div>`,
+      `<p>${C.about.closing_html}</p>`
+    ].join('');
+
+    // ---- stack chips
+    document.getElementById('stack-chips').innerHTML = C.stack.chips.map(c => `
+      <span class="chip${c.core ? ' core' : ''}">${c.label}${c.years ? ` <span class="yrs">${c.years}</span>` : ''}</span>
+    `).join('');
+
+    // ---- stack now (exploring)
+    document.getElementById('stack-now').innerHTML =
+      '<span class="arrow">Currently exploring →</span> ' +
+      C.stack.exploring.map(x => `<span>${x}</span>`).join('<span class="arrow">·</span>');
+
+    // ---- projects: featured
+    const f = C.projects.featured;
+    document.getElementById('projects-featured').innerHTML = `
+      <div class="featured">
+        <div class="ribbon">${f.ribbon}</div>
+        <h3>${f.title} <span class="dim">${f.subtitle}</span></h3>
+        <p class="tagline">${f.tagline}</p>
+        <div class="stack-row">${f.stack.map(s => `<span class="chip">${s}</span>`).join('')}</div>
+        <div class="arch" aria-hidden="true">
+          ${f.arch.map((node, i, arr) =>
+            `<div class="node">${node}</div>${i < arr.length - 1 ? '<div class="arrow">→</div>' : ''}`
+          ).join('')}
+        </div>
+        <div class="links">
+          <a class="btn primary" href="${f.primaryLink.href}" target="_blank" rel="noopener">${f.primaryLink.label}</a>
+          <a class="btn" href="${f.secondaryLink.href}" target="_blank" rel="noopener">${f.secondaryLink.label}</a>
+        </div>
+      </div>`;
+
+    // ---- projects: items
+    document.getElementById('projects-list').innerHTML = C.projects.items.map(p => p.placeholder
+      ? `<div class="project placeholder">
+           <div class="meta">${p.meta}</div>
+           <div><h3>${p.title}</h3><div class="desc">${p.desc}</div></div>
+           <div class="go">${p.go}</div>
+         </div>`
+      : `<a class="project" href="${p.href}" target="_blank" rel="noopener">
+           <div class="meta">${p.meta}</div>
+           <div><h3>${p.title}</h3><div class="desc">${p.desc}</div></div>
+           <div class="go">${p.go}</div>
+         </a>`
+    ).join('');
+
+    // ---- clients
+    document.getElementById('clients-list').innerHTML = C.clients.items.map(c => `
+      <div class="client">
+        <div class="logo ${c.logoClass || ''}">${c.logoText || ''}</div>
+        <div>
+          <div class="role">${c.role}</div>
+          <h4>${c.name}</h4>
+          <div class="desc">${c.desc_html || c.desc || ''}</div>
+        </div>
+      </div>`).join('');
+
+    // ---- podcast button
+    document.getElementById('podcast-btn').href = C.writing.podcast.href;
+
+    // ---- contact actions
+    document.getElementById('contact-actions').innerHTML = C.contact.actions.map(a => `
+      <a class="btn${a.primary ? ' primary' : ''}" href="${a.href}"${a.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${a.label}</a>
+    `).join('');
+
+    // ---- footer links
+    document.getElementById('footer-links').innerHTML = C.footer.links.map(l => `
+      <a href="${l.href}"${l.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${l.label}</a>
+    `).join('');
+  })();
+
+  // ============== THEME TOGGLE ==============
+  const root = document.documentElement;
+  const saved = localStorage.getItem('sc-theme');
+  if (saved) root.setAttribute('data-theme', saved);
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sc-theme', next);
+  });
+
+  // ============== SMOOTH SCROLL ==============
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
