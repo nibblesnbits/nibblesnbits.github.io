@@ -139,10 +139,10 @@ window.PORTFOLIO = {
             },
             {
                 meta: "JSON · transform",
-                title: "jtontl",
+                title: "jsontl",
                 desc: "An XSLT-alike for JSON. Declarative transforms; predictable output.",
-                href: "http://doubleprecisionsoftware.github.io/jsontl/",
-                go: "demo",
+                href: "https://github.com/DoublePrecisionSoftware/jsontl",
+                go: "github",
             },
             {
                 meta: "React · starter",
