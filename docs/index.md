@@ -24,4 +24,4 @@ You can also get a better sense of how I approach my work from my appearance on 
 
 > Lately, I’ve been exploring how human-centered design, ethical AI, and narrative thinking can reshape the systems we build.
 > 
-> When inspiration strikes, I also write [essays](https://thrd.me/read){: target=_blank } and [fiction](https://thrd.me/else){: target=_blank }.
+> When inspiration strikes, I also write [essays](https://thrd.me/dev){: target=_blank } and [fiction](https://thrd.me/else){: target=_blank }.
