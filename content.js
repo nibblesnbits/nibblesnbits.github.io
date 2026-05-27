@@ -27,9 +27,8 @@ window.PORTFOLIO = {
     hero: {
         kicker: "Software engineer · 30 years coding · 12 years professional",
         headline_html:
-            'I build software that <span class="accent">lasts.</span> <span class="dim">Not just software that ships.</span>',
-        lede_html:
-            'I\'m Stephen Collins. Currently Technical Lead at <a href="https://getostrich.com" target="_blank" rel="noopener">Ostrich</a> on a part-time basis — full time at <a href="https://tryonsoft.com/">Tryon Creek Software</a> and always looking for the next ambitious collaboration where the work matters.',
+            'I build software that <span class="accent">lasts,</span> <span class="dim">not just ships.</span>',
+        lede_html: `I'm Stephen Collins. I build systems that outlast the teams that started them. I think about the developer who touches this code five years from now — and the <span class="accent">people</span> the system affects five minutes after it ships.`,
         meta: [
             { label: "Status", value: "Open to new work", pulse: true },
             { label: "Based", value: "Remote · US" },
@@ -206,13 +205,35 @@ window.PORTFOLIO = {
         eyebrow: "05 / writing & talks",
         headline_html: 'When inspiration <span class="accent">strikes.</span>',
         body_html:
-            'Essays on software, ethical AI, and systems thinking live at <a href="https://thrd.me/dev" target="_blank" rel="noopener">dev.to</a>. Fiction lives next door at <a href="https://thrd.me/else" target="_blank" rel="noopener">thrd.me/else</a>.',
+            'Essays on software, ethical AI, and systems thinking live at <a href="https://thrd.me/dev" target="_blank" rel="noopener">dev.to</a>. I write there under the name <strong>Juno Threadborne</strong>. Fiction lives next door at <a href="https://thrd.me/else" target="_blank" rel="noopener">thrd.me/else</a>.',
+        subtext_html: `And check out my appearance on the <a href="https://siliconalleypodcast.com/" target="_blank" rel="noopener">Silicon Alley Podcast</a> for my thoughts of UX, systems design, and how caring in software matters.`,
         podcast: {
             label: "Podcast · Silicon Alley",
             title: "The Human Side of Software",
             sub: "With Stephen Collins, founder of Double Precision Software.",
             buttonLabel: "▶ Listen",
             href: "https://anchor.fm/silicon-alley/embed/episodes/The-Human-Side-of-Software--Stephen-Collins--Founder-of-Double-Precision-Software-enmbh3",
+        },
+        article: {
+            label: "Article · DEV Community",
+            title: "The Vibe Coding Paradox",
+            sub: "Written as Juno Threadborne.",
+            buttonLabel: "↗ Read article",
+            href: "https://dev.to/junothreadborne/the-vibe-coding-paradox-i31",
+            imageSrc:
+                "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjedaf8p31l8g5a41nqrt.png",
+            imageAlt: "Cover image for The Vibe Coding Paradox",
+        },
+        article2: {
+            label: "Article · DEV Community",
+            title: "Bespoke Accessibility Is the New Productivity Stack",
+            sub: "Written as Juno Threadborne.",
+            buttonLabel: "↗ Read article",
+            href: "https://dev.to/junothreadborne/bespoke-accessibility-is-the-new-productivity-stack-1ia7",
+            imageSrc:
+                "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fulbl4uu3qawk8johtyuv.jpg",
+            imageAlt:
+                "Cover image for Bespoke Accessibility Is the New Productivity Stack",
         },
     },
 
@@ -235,7 +256,7 @@ window.PORTFOLIO = {
 
     /* ---------- Footer ---------- */
     footer: {
-        copyright: "© 2026 Stephen Collins · built by hand",
+        copyright: "© 2026 Stephen Collins · built with ✨ & 🧠 & ❤️",
         links: [
             { label: "email", href: "mailto:sgcollins@outlook.com" },
             { label: "github", href: "https://github.com/nibblesnbits" },

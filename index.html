@@ -538,6 +538,32 @@
     color: var(--ink-dim);
     font-size: 14px;
   }
+  .podcast.article {
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+  }
+  .podcast.article .cover {
+    width: 100%;
+    height: 100%;
+    min-height: 84px;
+    align-self: stretch;
+    object-fit: cover;
+    border-radius: 7px;
+    border: 1px solid var(--rule-soft);
+    background: var(--bg);
+  }
+  .podcast.article .sub {
+    margin-top: 2px;
+  }
+  @media (max-width: 600px) {
+    .podcast.article {
+      grid-template-columns: 1fr;
+    }
+    .podcast.article .cover {
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+    }
+  }
 
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -685,6 +711,28 @@
     <div class="section-body">
       <p class="prose" data-bind-html="writing.body_html"></p>
 
+      <div class="podcast article" style="margin-top: 12px">
+        <img class="cover" id="article-cover" loading="lazy" />
+        <div>
+          <div class="label" data-bind="writing.article.label"></div>
+          <div class="ttl" data-bind="writing.article.title"></div>
+          <div class="sub" data-bind="writing.article.sub"></div>
+        </div>
+        <a class="btn" id="article-btn" target="_blank" rel="noopener" data-bind="writing.article.buttonLabel"></a>
+      </div>
+
+      <div class="podcast article" style="margin-top: 12px">
+        <img class="cover" id="article2-cover" loading="lazy" />
+        <div>
+          <div class="label" data-bind="writing.article2.label"></div>
+          <div class="ttl" data-bind="writing.article2.title"></div>
+          <div class="sub" data-bind="writing.article2.sub"></div>
+        </div>
+        <a class="btn" id="article2-btn" target="_blank" rel="noopener" data-bind="writing.article2.buttonLabel"></a>
+      </div>
+
+      <p class="prose" data-bind-html="writing.subtext_html"></p>
+
       <div class="podcast" style="margin-top: 18px">
         <div>
           <div class="label" data-bind="writing.podcast.label"></div>
@@ -819,6 +867,17 @@
 
     // ---- podcast button
     document.getElementById('podcast-btn').href = C.writing.podcast.href;
+
+    // ---- article feature
+    const articleCover = document.getElementById('article-cover');
+    articleCover.src = C.writing.article.imageSrc;
+    articleCover.alt = C.writing.article.imageAlt;
+    document.getElementById('article-btn').href = C.writing.article.href;
+
+    const article2Cover = document.getElementById('article2-cover');
+    article2Cover.src = C.writing.article2.imageSrc;
+    article2Cover.alt = C.writing.article2.imageAlt;
+    document.getElementById('article2-btn').href = C.writing.article2.href;
 
     // ---- contact actions
     document.getElementById('contact-actions').innerHTML = C.contact.actions.map(a => `
