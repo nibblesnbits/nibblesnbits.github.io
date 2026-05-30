@@ -256,7 +256,7 @@ window.PORTFOLIO = {
 
     /* ---------- Footer ---------- */
     footer: {
-        copyright: "© 2026 Stephen Collins · built with ✨ & 🧠 & ❤️",
+        copyright: "© 2026 Stephen Collins · built شوية شوية",
         links: [
             { label: "email", href: "mailto:sgcollins@outlook.com" },
             { label: "github", href: "https://github.com/nibblesnbits" },
